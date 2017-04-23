@@ -23,7 +23,7 @@ if(IsInjected($visitor_email))
     exit;
 }
 
-$email_from = 'rami@cellmedia.co.il';
+$email_from = 'admin@admin.com';
 $email_subject = "New Form submission";
 $email_body = "Here is the message:\n $feedback";
     
