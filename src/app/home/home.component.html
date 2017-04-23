@@ -1,2 +1,78 @@
-<h3>Home Component</h3>
-<p>Welcome to Angular Seed</p>
+
+
+<div id="content">
+  <div class="content">
+    <div id="top">
+      <div class="headline no-logo">
+        <div class="left">
+          <h2>dr weinberger</h2>
+        </div>
+        <div class="right">
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="hseparator"></div>
+
+
+    <div class="bullet-number-selector">
+      <input class="value" type="hidden" name="recommend" value="6">
+
+      <div class="bullets" id="recommend" data-toggle="popover" title="Please select a rating" data-content="Some content inside the popover" data-placement="bottom" data-trigger="focus">
+
+        <div (click)="select(star)" (mouseenter) ="hower = star"  (mouseleave) ="hower = -1" [ngClass]="{'selected': star === hower || star === selectSstar}" class="set-rating" *ngFor="let star of stars">
+                <span>
+                    <span></span>
+                </span>
+        </div>
+
+      </div>
+
+      <div class="numbers">
+        <div class="number-rating" data-rating="0">0</div>
+        <div class="number-rating" data-rating="1">1</div>
+        <div class="number-rating" data-rating="2">2</div>
+        <div class="number-rating" data-rating="3">3</div>
+        <div class="number-rating" data-rating="4">4</div>
+        <div class="number-rating" data-rating="5">5</div>
+        <div class="number-rating" data-rating="6">6</div>
+        <div class="number-rating" data-rating="7">7</div>
+        <div class="number-rating" data-rating="8">8</div>
+        <div class="number-rating" data-rating="9">9</div>
+        <div class="number-rating" data-rating="10">10</div>
+        <div class="clear"></div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+
+    <div class="alert alert-success" *ngIf="showMess">
+      <strong>Thanks you!</strong> Your message has been sent.
+    </div>
+
+    <div *ngIf="showForm">
+      Form
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name:</label>
+        <input [(ngModel)]="json.name" type="text" class="form-control" id="exampleInputEmail1">
+      </div>
+      <label id="textarea">
+
+        <textarea [(ngModel)]="json.text" id="review" name="reviewText" required="" data-validation-error="Review cannot be empty!" placeholder="Write comments here...">Great</textarea>
+        <span class="counter"><span id="reviewTextCount">0</span> / 1200 characters maximum</span>
+      </label>
+      <button class="submit" (click)="submit()">
+        <img src="https://s3.amazonaws.com/http-assets/assetic/feedback-icon.png" alt="">
+        SUBMIT FEEDBACK                </button>
+    </div>
+
+
+  </div>
+</div>
+
+
